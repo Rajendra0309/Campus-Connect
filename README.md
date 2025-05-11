@@ -2,7 +2,7 @@
 
 CampusConnect is a centralized social and utility platform for college students, serving as a hybrid of LinkedIn, a college forum, and resource-sharing space.
 
-## 🔍 Project Overview
+## Project Overview
 
 CampusConnect allows students to:
 - Share updates, event information, and achievements
