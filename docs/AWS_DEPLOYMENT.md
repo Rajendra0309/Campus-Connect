@@ -4,7 +4,7 @@
 
 This document details the complete AWS deployment process for Campus Connect, including all steps taken, errors encountered, and solutions applied.
 
-**Deployment Date:** January 2024  
+**Deployment Date:** 30th January 2026  
 **Status:** ✅ Successfully Deployed  
 **Live URL:** http://100.26.177.135 (temporary - IP changes on restart)
 
