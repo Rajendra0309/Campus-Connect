@@ -14,7 +14,7 @@ const MarketplaceItem = ({
 }) => {
   const { id } = useParams();
   const navigate = useNavigate();
-  
+
   useEffect(() => {
     getMarketplaceItem(id);
   }, [getMarketplaceItem, id]);
@@ -42,7 +42,7 @@ const MarketplaceItem = ({
 
   const { title, description, price, condition, status } = formData;
 
-  const onChange = e => 
+  const onChange = e =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
   const onSubmit = e => {
@@ -70,7 +70,7 @@ const MarketplaceItem = ({
         return category;
     }
   };
-  
+
   const getConditionText = (condition) => {
     switch (condition) {
       case 'new':
@@ -97,7 +97,7 @@ const MarketplaceItem = ({
       <Link to="/marketplace" className="btn btn-light">
         Back To Marketplace
       </Link>
-      
+
       <div className="marketplace-detail">
         {editing ? (
           <form onSubmit={onSubmit} className="edit-form">
@@ -154,9 +154,9 @@ const MarketplaceItem = ({
               <button type="submit" className="btn btn-primary">
                 Save Changes
               </button>
-              <button 
-                type="button" 
-                onClick={() => setEditing(false)} 
+              <button
+                type="button"
+                onClick={() => setEditing(false)}
                 className="btn btn-light"
               >
                 Cancel
@@ -171,7 +171,7 @@ const MarketplaceItem = ({
                 Status: <span className={`status-${item.status}`}>{item.status}</span>
               </div>
             </div>
-            
+
             <div className="marketplace-detail-images">
               {item.images && item.images.length > 0 ? (
                 item.images.map((image, index) => (
@@ -181,55 +181,55 @@ const MarketplaceItem = ({
                 ))
               ) : (
                 <div className="marketplace-detail-image">
-                  <img src="https://via.placeholder.com/600x400?text=No+Image" alt="No image available" />
+                  <img src="https://via.placeholder.com/600x400?text=No+Image" alt="No_image_available" />
                 </div>
               )}
             </div>
-            
+
             <div className="marketplace-detail-info">
               <div className="marketplace-detail-price">
                 <h2>₹{item.price}</h2>
               </div>
-              
+
               <div className="marketplace-detail-meta">
                 <p><strong>Category:</strong> {getCategoryText(item.category)}</p>
                 <p><strong>Condition:</strong> {getConditionText(item.condition)}</p>
                 <p><strong>Listed:</strong> {new Date(item.date).toLocaleDateString()}</p>
               </div>
-              
+
               <div className="marketplace-detail-description">
                 <h3>Description</h3>
                 <p>{item.description}</p>
               </div>
-              
+
               <div className="marketplace-detail-seller">
                 <h3>Seller Information</h3>
                 <p><strong>Contact:</strong> {item.user && item.user.email}</p>
               </div>
-              
+
               {isOwner && (
                 <div className="marketplace-detail-actions">
-                  <button 
-                    onClick={() => setEditing(true)} 
+                  <button
+                    onClick={() => setEditing(true)}
                     className="btn btn-primary"
                   >
                     Edit Listing
                   </button>
-                  <button 
-                    onClick={onDelete} 
+                  <button
+                    onClick={onDelete}
                     className="btn btn-danger"
                   >
                     Delete Listing
                   </button>
                 </div>
               )}
-              
+
               {!isOwner && item.status === 'available' && (
                 <div className="marketplace-detail-contact">
                   <h3>Interested?</h3>
                   <p>Contact the seller via email.</p>
-                  <a 
-                    href={`mailto:${item.user && item.user.email}?subject=Regarding: ${item.title}`} 
+                  <a
+                    href={`mailto:${item.user && item.user.email}?subject=Regarding: ${item.title}`}
                     className="btn btn-primary"
                   >
                     <i className="fas fa-envelope"></i> Contact Seller
