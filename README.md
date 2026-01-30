@@ -121,9 +121,13 @@ Campus-Connect/
 
 ## Deployment
 
+### Deployment Documentation
+- **AWS Deployment**: See [docs/AWS_DEPLOYMENT.md](docs/AWS_DEPLOYMENT.md) for detailed AWS ECS/Fargate deployment guide
+- **Render Deployment**: See [docs/RENDER_DEPLOYMENT.md](docs/RENDER_DEPLOYMENT.md) for free hosting setup
+
 ### CI/CD Pipeline
 - **CI**: Runs tests and builds Docker images on push
-- **CD**: Deploys to AWS ECR/ECS on main branch
+- **CD**: Manual deployment to AWS ECR/ECS
 
 ### Environment Variables
 ```
